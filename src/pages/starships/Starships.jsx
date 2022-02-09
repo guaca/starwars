@@ -12,6 +12,7 @@ import {
     StyledDiv,
     StyledUl
 } from './Starships.styled';
+import { Helmet } from 'react-helmet';
 
 const Starships = () => {
     const [list, setList] = useState([]);
@@ -45,6 +46,10 @@ const Starships = () => {
 
     return (
         <StyledContainer>
+            <Helmet>
+                <title>List of Star Wars Starships - Star Wars API Site</title>
+                <meta name="description" content="This is a complete list of all Star Wars Starships generated with SWAPI and React." />
+            </Helmet>
             <StyledUl>
                 {list.map((item, index) =>
                     <StyledLi key={index}>

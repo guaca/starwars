@@ -14,6 +14,7 @@ import {
     StyledH1,
     StyledButton
 } from './Starship.styled';
+import { Helmet } from 'react-helmet';
 
 const Starship = () => {
     const { id } = useParams();
@@ -70,6 +71,10 @@ const Starship = () => {
 
     return (
         <>
+            <Helmet>
+                <title>{`${starship.name} - Star Wars API Site`}</title>
+                <meta name="description" content={`Explore all the ${starship.name} details, manufactured by ${starship.manufacturer} and with a cargo capacity of ${starship.cargo_capacity} kg.`} />
+            </Helmet>  
             <StyledContainer>
                 <StyledImage src={imageUrl} alt={starship.name} />
                 <StyledInfo>
